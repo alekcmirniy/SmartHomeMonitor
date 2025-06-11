@@ -1,14 +1,13 @@
 <template>
-  <div class = "page about-page">
-    <h1>Умный дом - о нас</h1>
-    <p>Проект выполнен Мирошниченко Алексеем в рамках обучения фреймворку Vue.js</p>
-    <p>Цель: практико-ориентированное освоение фреймворка</p>
+  <div class = "page info-page">
+    <h1>Умный дом - информация</h1>
+    <p>Система мониторинга - совокупность свойств и методов управления умным домом</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AboutView'
+  name: 'InfoView'
 }
 </script>
 
@@ -19,8 +18,9 @@ export default {
 .page {
   padding-top: 25px;
   text-align: center;
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
+  line-height: 1.6;
 }
 h1 {
   margin-top: 55px;

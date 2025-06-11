@@ -1,0 +1,36 @@
+html, body, div, p, span, h1, h2, h3, h4, h5, h6, a, img, dl, dt, dd, ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+#app {
+    margin: 0;
+    padding: 0;
+}
+html, body, #app {
+    font-family: $font-primary;
+    background-color: $color-bg;
+    color: $color-text;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+@media (max-width: $breakpoint-desktop) {
+    //
+}
+@media (max-width: $breakpoint-tablet) {
+    //
+}
+@media (max-width: $breakpoint-mobile) {
+    //
+}

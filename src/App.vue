@@ -1,30 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id = "app">
+    <MainNavigation />
+    <main class = "content-wrapper">
+      <!-- Здесь рендерится текущая вьюха -->
+       <router-view />
+    </main>
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import MainNavigation from './components/MainNavigation.vue';
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'App',
+  components: {
+    MainNavigation
   }
+}
+</script>
+
+<style lang = "scss">
+@import '../src/styles/variables.scss';
+@import '../src/styles/main.scss';
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrapper {
+  flex: 1;
+  padding: 20px;
 }
 </style>
