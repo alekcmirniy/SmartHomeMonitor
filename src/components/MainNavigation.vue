@@ -1,64 +1,63 @@
 <template>
-    <nav class = "nav-bar">
-        <ul class = "nav-list">
-            <li class = "nav-item">
-                <router-link to="/" class = "nav-link">Главная</router-link>
-            </li>
-            <li class = "nav-item">
-                <router-link to="/info" class = "nav-link">Информация</router-link>
-            </li>
-            <li class = "nav-item">
-                <router-link to = "/gallery" class = "nav-link">Галерея</router-link>
-            </li>
-            <li class = "nav-item">
-                <router-link to = "/monitor" class = "nav-link">Мониторинг</router-link>
-            </li>
-            <li class = "nav-item">
-                <router-link to = "/control" class = "nav-link">Управление</router-link>
-            </li>
-            <li class = "nav-item">
-                <router-link to = "/contacts" class = "nav-link">Контакты</router-link>
-            </li>
-            <li class = "nav-item">
-                <router-link to = "/about" class = "nav-link">О нас</router-link>
-            </li>
-        </ul>
-    </nav>
+  <nav class="nav-bar" role="navigation" aria-label="Основная навигация">
+    <ul class="nav-list">
+      <li class="nav-item" v-for="link in links" :key="link.name">
+        <router-link
+          :to="link.path"
+          class="nav-link"
+          active-class="router-link-active"
+          aria-current="page"
+        >
+          {{ link.label }}
+        </router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
 export default {
-    name: 'MainNavigation'
-}
+  name: "MainNavigation",
+  data() {
+    return {
+      links: [
+        { name: "home", path: "/", label: "Главная" },
+        { name: "monitor", path: "/monitor", label: "Мониторинг" },
+        { name: "control", path: "/control", label: "Управление" },
+        { name: "gallery", path: "/gallery", label: "Галерея" },
+        { name: "info", path: "/info", label: "Информация" },
+        { name: "contacts", path: "/contacts", label: "Контакты" },
+        { name: "about", path: "/about", label: "О проекте" }
+      ],
+    };
+  },
+};
 </script>
 
-<style scoped lang = "scss">
+<style scoped lang="scss">
 .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;;
-    height: 60px;
-    background-color: rosybrown;
-    display: flex;
-    align-items: center;
-    z-index: 100;
+  background-color: $color-primary;
+  padding: 10px 20px;
 }
 .nav-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
 }
-.nav-item {
-    margin-right: 15px;
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-.nav-list a.router-link-active {
-    border-bottom: 2px solid violet;
+.nav-link:hover,
+.router-link-active {
+  background-color: darken($color-primary, 10%);
+  color: white;
 }
 </style>

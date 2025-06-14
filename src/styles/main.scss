@@ -1,36 +1,82 @@
-html, body, div, p, span, h1, h2, h3, h4, h5, h6, a, img, dl, dt, dd, ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+/* main.scss */
+
+/* Сброс базовых отступов и box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#app {
-    margin: 0;
-    padding: 0;
+
+/* Общие переменные цветов */
+$color-tan: tan;
+$color-tan-dark: #b8860b;
+$color-white: #fff;
+$color-black: #000;
+
+/* Базовые настройки шрифта */
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: $color-white;
+  color: $color-black;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
-html, body, #app {
-    font-family: $font-primary;
-    background-color: $color-bg;
-    color: $color-text;
-    height: 100%;
-}
+
+/* Ссылки */
 a {
-    text-decoration: none;
+  color: $color-tan-dark;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: darken($color-tan-dark, 15%);
+    outline: none;
+  }
 }
-ul {
-    list-style: none;
+
+/* Кнопки */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background-color: $color-tan;
+  color: $color-white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $color-tan-dark;
+    outline: none;
+  }
 }
-img {
-    max-width: 100%;
-    display: block;
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  color: $color-tan-dark;
 }
-@media (max-width: $breakpoint-desktop) {
-    //
+
+/* Контейнер для центрации контента с max-width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-@media (max-width: $breakpoint-tablet) {
-    //
+
+/* Классы для теней и бордеров (используются в компонентах) */
+.box-shadow {
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.15);
 }
-@media (max-width: $breakpoint-mobile) {
-    //
+
+.border-tan {
+  border: 2px solid $color-tan;
+  border-radius: 10px;
+  padding: 10px;
 }

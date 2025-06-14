@@ -1,63 +1,61 @@
 <template>
-  <section class = "home-container">
-    <div class = "intro">
-      <h1>Система мониторинга умного дома</h1>
-      <p>Позволяет следить за температурой, влажностью, освещенностью...</p>
+  <main class="home-page" aria-label="Главная страница умного дома">
+    <div class="content">
+      <div class="text-container">
+        <h1>Умный дом — главная</h1>
+        <p>Добро пожаловать в ваш умный дом!</p>
+      </div>
+      <img src="../assets/home-logo.png" alt="Логотип системы умного дома" />
     </div>
-    <div class = "home-image">
-      <img src = "../assets/logo.png" alt = "Логотип умного дома" />
-    </div>
-  </section>
+  </main>
 </template>
 
 <script>
 export default {
   name: 'HomeView'
-}
+};
 </script>
 
-<style scoped lang = "scss">
-* {  
+<style scoped lang="scss">
+.home-page {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 80px 20px;
 }
-.home-container {
-  padding-top: 55px;
+
+.content {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-.intro {
-  flex: 1;
-  padding: 20px;
+  justify-content: center;
+  gap: 20px;
 }
-.home-image {
-  flex:1;
+
+.text-container {
+  max-width: 400px;
   text-align: center;
 }
-}
+
 h1 {
-  font-size: 28px;
+  margin-top: 0;
   box-shadow: 2px 2px 5px 2px;
   border: solid 2px tan;
   border-radius: 10px;
+  padding: 10px;
 }
+
 p {
-  margin-top: 15px;
+  margin: 10px 0;
   font-size: 18px;
-    box-shadow: 2px 2px 5px 2px;
+  box-shadow: 2px 2px 5px 2px;
   border: solid 2px tan;
   border-radius: 10px;
+  padding: 10px;
 }
-@media (max-width: 1200px) {
-  .home-container {
-    flex-direction: column;
-  }
-  .home-image {
-    margin-top: 20px;
-  }
-}
-@media (max-width: 550px) {
-  .intro h1 {
-    font-size: 1.5rem;
-  }
+
+img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px;
 }
 </style>

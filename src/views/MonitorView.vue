@@ -1,28 +1,18 @@
 <template>
-  <section class = "monitor-page">
-  <h1>Умный дом - мониторинг</h1>
-  <p>Состояние элементов</p>
-  <div class = "cards-wrapper">
-    <div class = "card" lang="ru" title="Карточка">
-      <p><span class="card-name">Яндекс Алиса</span></p>
-      <img src = "../assets/ya-alice.png" />
-    </div>
-    <div class = "card" lang="ru" title="Карточка">
-      <p><span class="card-name">Умный холодильник </span></p>
-      <img src = "../assets/fridge.png" />
-    </div>
-    <div class = "card" lang="ru" title="Карточка">
-      <p><span class="card-name">Кондиционер</span></p>
-      <img src = "../assets/conditioner.png" />
-    </div>
-  </div>
-  <div class = "sensors-list">
-    <div class = "sensor-card" v-for = "sensor in sensors" :key = "sensor.id">
-      <h3> {{ sensor.name }}</h3>
-      <p>Значение: {{ sensor.value }} из {{ sensor.max_value }}</p>
-    </div>
-  </div>
-  </section>
+  <main class="monitor-page" aria-labelledby="monitor-title">
+    <h1 id="monitor-title">Умный дом — мониторинг</h1>
+    <section class="sensor-list" aria-live="polite" aria-atomic="true">
+      <article
+        class="sensor-card"
+        v-for="sensor in sensors"
+        :key="sensor.id"
+      >
+        <img :src="sensor.icon" :alt="sensor.name + ' иконка'" />
+        <h3>{{ sensor.name }}</h3>
+        <p>{{ sensor.value }}</p>
+      </article>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -30,91 +20,78 @@ export default {
   name: 'MonitorView',
   data() {
     return {
-      //пока статический массив, потом заменим запросом
       sensors: [
-        {id: 1, name: "Громкость Алисы", value: 8, max_value: 10},
-        {id: 2, name: "Температура холодильника", value: -5, max_value: -20},
-        {id: 3, name: "Температура кондиционера", value: 10, max_value: 25}
+        {
+          id: 1,
+          name: "Температура",
+          value: "20°C",
+          icon: require('../assets/icons/temperature.png')
+        },
+        {
+          id: 2,
+          name: "Влажность",
+          value: "55%",
+          icon: require('../assets/icons/humidity.png')
+        },
+        {
+          id: 3,
+          name: "Датчик движения",
+          value: "Активен",
+          icon: require('../assets/icons/motion.png')
+        }
       ]
-    }
-  },
-  mounted() {
-    //сюда позже добавим fetch/axios к настоящему API.
+    };
   }
 }
 </script>
 
-<style scoped lang = "scss">
-* {  
+<style scoped lang="scss">
+.monitor-page {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.cards-wrapper {
   padding-top: 25px;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-}
-.card {
-  display: flex;
-  justify-content: space-around;
-  max-width: 25vw;
-}
-.card-name::before {
-  content: "Предмет:";
-  font-size: 1.25rem;
-  display: block;
-  margin: 0.5rem 0;
-}
-.card-name::after {
-  content: "Состояние:...";
-  font-size: 1.25rem;
-  display: block;
-  margin: 0.5rem 0;
-}
-.card-name {
-  
-  font-size: 1.5rem;
-}
-.card img {
-  max-width: 50%;
-  border-radius: 10px;
-}
-.sensors-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-.sensor-card {
-  background: white;
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: auto;
   text-align: center;
 }
+
 h1 {
-  padding: 10px;
   margin-top: 55px;
-  font-size: 28px;
   box-shadow: 2px 2px 5px 2px;
   border: solid 2px tan;
   border-radius: 10px;
-}
-p {
   padding: 10px;
-  margin: 10px;
-  font-size: 18px;
-    box-shadow: 2px 2px 5px 2px;
-  border: solid 2px tan;
-  border-radius: 10px;
 }
-@media (max-width: 1200px) {
-  .cards-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    margin: 15px 0;
-  }
+
+.sensor-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.sensor-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+  width: 180px;
+  text-align: center;
+}
+
+.sensor-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.sensor-card h3 {
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
+
+.sensor-card p {
+  font-size: 18px;
+  color: #333;
 }
 </style>

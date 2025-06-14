@@ -1,6 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import './styles/main.scss'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import './styles/main.scss'; // Глобальные стили
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount('#app');

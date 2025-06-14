@@ -1,15 +1,16 @@
 <template>
-  <section class = "contacts-page">
-    <h1>Связаться с нами</h1>
-    <ContactForm 
-    @show-modal = "openModal"
+  <main class="contacts-page" aria-labelledby="contacts-title">
+    <h1 id="contacts-title">Связаться с нами</h1>
+    <ContactForm @show-modal="openModal" />
+    <MainModal
+      :visible="isModalVisible"
+      :message="modalText"
+      @update:visible="isModalVisible = $event"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-message"
     />
-    <MainModal 
-    :visible="isModalVisible"
-    :message="modalText"
-    @update:visible = "isModalVisible = $event"
-    />
-  </section>
+  </main>
 </template>
 
 <script>
@@ -18,15 +19,12 @@ import MainModal from '../components/MainModal.vue';
 
 export default {
   name: 'ContactsView',
-  components: {
-    ContactForm,
-    MainModal
-  },
+  components: { ContactForm, MainModal },
   data() {
     return {
       isModalVisible: false,
       modalText: ''
-    }
+    };
   },
   methods: {
     openModal(payload) {
@@ -37,25 +35,24 @@ export default {
 }
 </script>
 
-<style scoped lang = "scss">
-* {  
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+<style scoped lang="scss">
 .contacts-page {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-top: 80px;
   text-align: center;
 }
+
 h1 {
   padding: 2px;
-  font-size: 28px;
   box-shadow: 2px 2px 5px 2px;
   border: solid 2px tan;
   border-radius: 10px;
 }
+
 p {
-  margin:10px;
+  margin: 10px;
   font-size: 18px;
-    box-shadow: 2px 2px 5px 2px;
+  box-shadow: 2px 2px 5px 2px;
   border: solid 2px tan;
   border-radius: 10px;
 }
