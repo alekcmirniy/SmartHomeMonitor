@@ -1,72 +1,133 @@
-# Smart Home Monitor – мониторинг и управление умным домом
+🏠 Smart Home Monitor
+A Vue.js application for training with Vue Options API, Vue Router, Layout building.
 
--- Приложение на Vue.js для мониторинга показателей дома (температура, влажность, движение) и управления устройствами.
+✨ Features of layout
+Real-time sensor data monitoring (temperature, humidity, motion)
 
-## Особенности
+Intuitive device management interface
 
--- Просмотр данных с датчиков в реальном времени.
+Visual gallery for objects and camera feeds
 
--- Управление устройствами с помощью удобного интерфейса.
+Informational pages with system description and contacts
 
--- Галерея для визуализации объектов и камер.
+Clean, modern design using Vue 3 and SCSS
 
--- Информационные страницы с описанием системы и контактами.
+Responsive navigation and user interface
 
--- Чистый современный дизайн с использованием Vue 3 и SCSS.
+🚀 Quick Start
+Clone and Install
 
-## Запуск проекта
+# Clone the repository
+  -git clone https://github.com/alekcmirniy/smart-home-monitor.git
+  -cd smart-home-monitor
 
--- Клонировать репозиторий:
+# Install dependencies
+  -npm install
+Development
 
-git clone https://github.com/your-username/smart-home-monitor.git
-cd smart-home-monitor
+# Start local development server
+  -npm run serve
 
--- Установить зависимости:
+Production Build
 
-npm install
--- Запустить локально:
+# Build for production
+  -npm run build
+  
+📖 How to Use
+Use the navigation menu to switch between Home, Monitor, Control, Gallery, Info, and Contact pages
 
-npm run serve
+The Monitor page displays real-time sensor data with visual indicators
 
-## Использование
+The Control page allows you to toggle devices on/off with intuitive switches
 
--- Используйте навигацию для перехода между главной страницей, монитором, управлением, галереей, информацией и контактами.
+Browse the Gallery to view visual data from connected cameras
 
--- На странице мониторинга отображаются данные с сенсоров.
+Access system information and contact details in the respective sections
 
--- На странице управления можно включать и выключать устройства.
+🛠️ Technologies
+Vue 3 + Options API
 
-## Технологии
+Vue Router 4 - navigation and routing
 
--- Vue 3 + Options API
+SCSS - advanced styling with variables and mixins
 
--- Vue Router для навигации
+Component-based architecture - reusable UI components
 
--- SCSS для стилей
+Responsive design - works on desktop and mobile devices
 
--- Компонентная архитектура
+smart-home-monitor/
+├── node_modules/           # Dependencies (auto-generated)
+├── public/
+│   ├── favicon.ico        # Site favicon
+│   └── index.html         # Main HTML template
+├── src/
+│   ├── assets/
+│   │   ├── gallery/       # Slider images
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   └── 3.jpg
+│   │   └── icons/         # Application icons
+│   │       ├── conditioner.png
+│   │       ├── fridge.png
+│   │       ├── home-logo.png
+│   │       └── ya-alice.png
+│   ├── components/        # Reusable UI components
+│   │   ├── ContactForm.vue
+│   │   ├── MainModal.vue
+│   │   ├── MainNavigation.vue
+│   │   └── MainSlider.vue
+│   ├── router/
+│   │   └── index.js       # Vue Router configuration
+│   ├── styles/            # SCSS stylesheets
+│   │   ├── _mixins.scss   # SCSS mixins
+│   │   ├── main.scss      # Main styles file
+│   │   └── _variables.scss # SCSS variables
+│   ├── utils/
+│   │   └── api.js         # API communication functions
+│   ├── views/             # Application pages
+│   │   ├── AboutView.vue
+│   │   ├── ContactsView.vue
+│   │   ├── ControlView.vue
+│   │   ├── GalleryView.vue
+│   │   ├── HomeView.vue
+│   │   ├── InfoView.vue
+│   │   └── MonitorView.vue
+│   ├── App.vue            # Root application component
+│   └── main.js           # Application entry point
+├── .gitignore            # Git ignore rules
+├── package.json          # NPM configuration
+└── README.md            # Project documentation
 
-## Структура проекта
+📝 Available Scripts
+npm run serve - start development server with hot-reload
 
-src/
+npm run build - build for production with optimization
 
-├─ assets/ (иконки, стили)
 
-├─ components/ (общие компоненты интерфейса)
+🌐 Live Demo
+Application Demo (if deployed to GitHub Pages)
 
-├─ views/ (страницы: HomeView, MonitorView, ControlView и др.)
+🤝 Contributing
+Contributions are welcome! Please feel free to:
 
-├─ router/ (маршруты)
+Fork the repository
 
-├─ App.vue
+Create a feature branch (git checkout -b feature/amazing-feature)
 
-└─ main.js
+Commit your changes (git commit -m 'Add amazing feature')
 
-## Лицензия
+Push to the branch (git push origin feature/amazing-feature)
 
--- Этот проект распространяется под лицензией MIT.
+Open a Pull Request
 
-## Автор
+📄 License
+This project is distributed under the MIT License. See the LICENSE file for details.
 
-Мирошниченко Алексей Владимирович
+👨‍💻 Author
+Alexey Miroshnichenko
+
 GitHub: alekcmirniy
+
+Project: Smart Home Monitor
+
+Note: This project is my first training with Vue framework within the university studying programm.
