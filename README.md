@@ -26,6 +26,7 @@ smart-home-monitor/
 │   ├── components/
 │   ├── views/
 │   └── styles/
+    └── ...
 ├── package.json
 └── README.md
 ```
