@@ -1,4 +1,5 @@
 # Smart Home Monitor
+<img width="863" height="383" alt="image" src="https://github.com/user-attachments/assets/75e8cf02-17ca-488e-8790-01ee7e99164a" />
 
 Кратко: Тренировочный проект на Vue 3 для отображения данных датчиков, управления устройствами и просмотра галереи камер.
 
